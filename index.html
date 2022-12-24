@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/images/icon_.png">
+    <link rel="shortcut icon" type="images/ico" href="assets/images/icon.png">
+    <title>MovieCats</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+
+    <section id = "index" class = "index">  
+            <div class = "color"></div>
+            <div class = "color"></div>
+            <div class = "color"></div>
+            <div class="general_container" id = "general">
+                <div class="back_div">
+                    <div class="login_back_div">
+                        <h3> ¿Ya tienes una cuenta? </h3>
+                        <p>Inicia sesión para entrar a Moviecats</p>
+                        <button id="btn_login">Iniciar sesión   </button>
+                    </div>
+                    <div class="register_back_div">
+                        <h3> ¿Aún no tienes una cuenta? </h3>
+                        <p>Regístrate para entrar a Moviecats</p>
+                        <button id="btn_register">Registrarme</button>
+                    </div>
+                </div>
+                <div class="front_div">
+                    <form action="" class="login_form">
+                        <h2>Iniciar sesión</h2>
+                        <input type="text" class="input" id="txtUser_" placeholder="Nombre de usuario"  >
+                        <input class = "input"  type="password" id = "txtPass_" placeholder="Contraseña">
+                        <div class = "chk">
+                            <input type="checkbox" id="admin" name="admin">
+                            <label for="admin" >Administrador</label>
+                        </div>
+                        <button id="login" type="button">Iniciar sesión</button>
+                    </form>
+
+                    <form action="" class="register_form">
+                        <h2>Registrarse</h2>
+                        <input class="input" type="text" id="txtUser" placeholder="Nombre de usuario">
+                        <input class="input" type="text" id="txtNombre" placeholder="Nombre completo">
+                        <input class="input" type="number" id="txtDpi" placeholder="DPI">
+                        <input class="input" type="number" id= "txtTel" placeholder="Teléfono">
+                        <input class="input" type="password" id="txtPass" placeholder="Contraseña">    
+                        <button id="register" type="button">Registrarte</button>
+                    </form>
+                </div>
+
+            </div>
+    
+    </section>
+
+    <section id = "admin" class = "admin">
+        <div class = "color"></div>
+        <div class = "color"></div>
+        <div class = "color"></div>
+        <div class="container" id="adminpage">
+            <header>
+                <a href="#" class="logo" id="backHome" ><img src="assets/images/icon.png" class="img">Moviecats</a>
+                <ul>
+                    <li>
+                        <label class="custom-file-upload">
+                            <input type="file" id="usersFile"/>Películas
+                        </label>
+                    </li>
+                    <li>
+                        <label class="custom-file-upload">
+                            <input type="file" id = 'artistFile'/>Clientes
+                        </label>
+                    </li>
+                    <li>
+                        <label class="custom-file-upload">
+                            <input type="file" id = "musicFile"/>Actores
+                        </label>
+                    </li>
+                    <li>
+                        <label class="custom-file-upload">
+                            <input type="file" id="programmedFile"/>Categorías
+                        </label>
+                    </li>
+                </ul>
+            </header>
+            <div class="content">
+                <div class="graphs_btn">
+                    <h2>Gráficas</h2>
+                    <button class="btn" id = "btn_userGraph">Películas</button>
+                    <button class="btn" id = "btn_artistGraph">Artistas</button>
+                    <button class="btn" id = "btn_songGraph">Canciones</button>
+                    <button class="btn" id = "btn_programmedGraph">Música<br>programada</button>
+                    <button class="btn" id = "btn_podcastGraph">Podcasts</button>
+                </div>
+                <div class="graphs">
+                    <div class="graphRender" id = "graphRender">                 
+                    </div>
+                    <button class="btn" id="btn_download">Descargar</button>
+                    
+                </div>
+                
+            </div>
+            <div class="menubtn">
+                <button class="btn" id="btn_blockchain">Blockchain</button>
+                <button class="btn" id="btn_salir"><img src="assets/images/out.png" style="width: 20px; height:20px;"></button>
+            </div>
+        </div>
+    </section>
+
+    <section id = "blockchain" class = "blockchain">
+        <div class = "color"></div>
+        <div class = "color"></div>
+        <div class = "color"></div>
+        <div class="container" id="blockchainpg">
+            <header style="display: flex; align-items: center; justify-content: center;">
+                <a href="#" class="logo" id="backHome1" ><img src="assets/images/icon.png" class="img">Moviecats</a>
+            </header>
+            <div class="bc_content">
+                <div class="block">
+                    <input type="text" id="name" placeholder="Ej.: 120">
+                    <label for ="blocknum" >Segundos</label>
+                    <button class="btn" id="btn_time">Modificar tiempo</button>
+                    <button class="btn" id="btn_generateBlock">Generar bloque<br>ahora</button>
+                </div>
+                <div class="blocks">
+                    <div class="graphRender1" id="graphRender1">                 
+                    </div>
+                </div>
+
+                <div class="merkle">
+                    <div class="graphRender2" id="graphRender2">                 
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="menubtn">
+                <button class="btn" id="btn_principal">Principal</button>
+                <button class="btn" id="btn_salir1"><img src="assets/images/out.png" style="width: 20px; height:20px;"></button>
+            </div>
+        </div>
+    </section>
+
+    <section id = "principal_user" class = "principal_user">
+        <div class = "color"></div>
+        <div class = "color"></div>
+        <div class = "color"></div>
+        <div class="container" id="p_user">
+            <header>
+                <a href="#" class="logo" id="backHome2"><img src="assets/images/icon.png" class="img">Moviecats</a>
+                <ul>
+                    <li><a id="movie" href="#movies">Películas</a></li>
+                    <li><a id="actor" href="#actor">Actores</a></li>
+                    <li><a id="category" href="#category">Categorías</a></li>
+                </ul>
+            </header>
+            <div class = "sorting">
+                <button id="btn_asc"><img src="assets/images/asc.png" style="width: 70px; height: 70px;"></button>
+                <button id="btn_desc"><img src="assets/images/desc.png" style="width: 70px; height: 70px;"></button>
+            </div>
+            <div class = "movies">
+                <div class="movie">
+                    <div class= "movie_card" id="movie_card">
+                        <h3 id = "movie_title">AQUAMAAAAN</h3>
+                        <img src="assets/images/bg.png" id="movie_picture"> 
+                    </div>
+                    <div class="movie_desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ipsa voluptas officiis unde enim nemo illum quidem reiciendis. Enim ab incidunt inventore illo omnis tempora eius autem voluptate voluptates fugit?
+                    </div>
+                    <div class="movie_opts">
+                        <button id="btn_info" style="display: block;justify-content: center; align-items: center;"><img src="assets/images/info.png" id="movie_opt"><br>Información</button>
+                        <button id="btn_rent" style="display: block; justify-content: center; align-items: center;"><img src="assets/images/shop.png" id="movie_opt"><br>Alquilar<br>QPrecio</button>      
+                    </div>
+                </div>
+                <div class="movie">
+                    <div class= "movie_card" id="movie_card">
+                        <h3 id = "movie_title">AQUAMAAAAN</h3>
+                        <img src="assets/images/bg.png" id="movie_picture"> 
+                    </div>
+                    <div class="movie_desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ipsa voluptas officiis unde enim nemo illum quidem reiciendis. Enim ab incidunt inventore illo omnis tempora eius autem voluptate voluptates fugit?
+                    </div>
+                    <div class="movie_opts">
+                        <button id="btn_info" style="display: block;justify-content: center; align-items: center;"><img src="assets/images/info.png" id="movie_opt"><br>Información</button>
+                        <button id="btn_rent" style="display: block; justify-content: center; align-items: center;"><img src="assets/images/shop.png" id="movie_opt"><br>Alquilar</button>      
+                    </div>
+                </div>
+                    <div class="movie">
+                        <div class= "movie_card" id="movie_card">
+                            <h3 id = "movie_title">AQUAMAAAAN</h3>
+                            <img src="assets/images/bg.png" id="movie_picture"> 
+                        </div>
+                        <div class="movie_desc">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, nulla! Saepe libero vero excepturi sint velit quisquam fugit a corporis dignissimos autem. Quia debitis facilis aut nobis suscipit esse tenetur.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque et, beatae modi iste eaque iure quod. Quidem libero odio repellat facere nisi. Ratione est vitae quam et cum vero doloribus.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ipsa voluptas officiis unde enim nemo illum quidem reiciendis. Enim ab incidunt inventore illo omnis tempora eius autem voluptate voluptates fugit?
+                        </div>
+                        <div class="movie_opts">
+                            <button id="btn_info" style="display: block;justify-content: center; align-items: center;"><img src="assets/images/info.png" id="movie_opt"><br>Información</button>
+                            <button id="btn_rent" style="display: block; justify-content: center; align-items: center;"><img src="assets/images/shop.png" id="movie_opt"><br>Alquilar<br>Q600</button>      
+                        </div>
+                    </div>
+                    <div class="movie">
+                        <div class= "movie_card" id="movie_card">
+                            <h3 id = "movie_title">AQUAMAAAAN</h3>
+                            <img src="assets/images/bg.png" id="movie_picture"> 
+                        </div>
+                        <div class="movie_desc">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ipsa voluptas officiis unde enim nemo illum quidem reiciendis. Enim ab incidunt inventore illo omnis tempora eius autem voluptate voluptates fugit?
+                        </div>
+                        <div class="movie_opts">
+                            <button id="btn_info" style="display: block;justify-content: center; align-items: center;"><img src="assets/images/info.png" id="movie_opt"><br>Información</button>
+                            <button id="btn_rent" style="display: block; justify-content: center; align-items: center;"><img src="assets/images/shop.png" id="movie_opt"><br>Alquilar</button>      
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section id = "movie_user" class = "movie_user">
+        <div class = "color"></div>
+        <div class = "color"></div>
+        <div class = "color"></div>
+        <div class="container" id="m_user">
+            <header>
+                <a href="#" class="logo" id="backHome3"><img src="assets/images/icon.png" class="img">Moviecats</a>
+                <ul>
+                    <li><a id="movie1" href="#movies">Películas</a></li>
+                    <li><a id="actor1" href="#actor">Actores</a></li>
+                    <li><a id="category1" href="#category">Categorías</a></li>
+                </ul>
+            </header>
+            <div class = "movie_info">
+                <h2 class = "title">PELÍCULA OWO</h2>
+                <div class = "desc" style="display: inline-flex;">
+                    <img src="assets/images/icon.png" style="width: 110px; height: 110px; margin-right: 2%;">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ab rem libero quisquam molestias. Voluptatem natus excepturi ut error sint obcaecati non, reiciendis libero consequatur provident sapiente, quibusdam illum iusto?
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti quisquam vitae veniam totam distinctio voluptatum ullam beatae est animi magnam accusantium neque adipisci quos illum doloribus libero nulla, quibusdam ipsam?</div>
+                <button id="btn_rent_individual" style="display: flex; justify-content: center; align-items: center; font-weight: 800;"><img src="assets/images/shop.png" id="movie_opt" style="margin-right: 10px; margin-top: 10px;"><br>Alquilar<br>Q50.00</button>  
+            </div>
+            <div class = "movie_rate">
+                <h2>Califica esta película! </h2>
+                <div class="star-widget">
+                    <input type="radio" name="rate" id="rate-5">
+                    <label for="rate-5" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-4">
+                    <label for="rate-4" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-3">
+                    <label for="rate-3" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-2">
+                    <label for="rate-2" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-1">
+                    <label for="rate-1" class="fas fa-star"></label>
+                </div>
+            </div>
+            <h2 style ="margin-top: 30px; font-weight: 600;">Comentarios</h2>
+            <div class = "comment_section">
+                <div class = "comment"><h4><font color=gray>Tu vieja:</font> asdjfñwfje</h4></div>
+                <div class = "comment"><h4><font color=gray>Tu vieja2:</font> ajsdf</h4></div>
+            </div>
+            <input type="text" placeholder="Ingresa tu comentario" class ="comment_sth"></div>
+            <button class = "btn" id ="send_comment">Publicar</button>
+            <div class = "movies">  
+                
+            </div>
+        </div>
+    </section>
+
+    <section id = "actor_user" class = "actor_user">
+        <div class = "color"></div>
+        <div class = "color"></div>
+        <div class = "color"></div>
+        <div class="container" id="a_user">
+            <header>
+                <a href="#" class="logo" id="backHome4"><img src="assets/images/icon.png" class="img">Moviecats</a>
+                <ul>
+                    <li><a id="movie2" href="#movies">Películas</a></li>
+                    <li><a id="actor2" href="#actor">Actores</a></li>
+                    <li><a id="category2" href="#category">Categorías</a></li>
+                </ul>
+            </header>
+            <div class = "sorting">
+                <button id="btn_inorden"><img src="assets/images/asc.png" style="width: 70px; height: 70px;"><br>Inorden</button>
+                <button id="btn_preorden"><img src="assets/images/desc.png" style="width: 70px; height: 70px;"><br>Preorden</button>
+                <button id="btn_postorden"><img src="assets/images/asc.png" style="width: 70px; height: 70px;"><br>Postorden</button>
+            </div>
+            <div class = "actors">
+                <div class="actor" style="display: inline-flex; justify-content: center; align-items: center; margin-top: 30px;">
+                    <div class= "actor_card" id="actor_card">
+                        <h3 id = "actor_name">ACTOR D:</h3>
+                        <img src="assets/images/bg.png" id="actor_picture"> 
+                    </div>
+                    <div class="actor_desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ipsa voluptas officiis unde enim nemo illum quidem reiciendis. Enim ab incidunt inventore illo omnis tempora eius autem voluptate voluptates fugit?
+                    </div>
+                </div>
+                <div class="actor" style="display: inline-flex; justify-content: center; align-items: center; margin-top: 30px;">
+                    <div class= "actor_card" id="actor_card">
+                        <h3 id = "actor_name">ACTOR D:</h3>
+                        <img src="assets/images/bg.png" id="actor_picture"> 
+                    </div>
+                    <div class="actor_desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ipsa voluptas officiis unde enim nemo illum quidem reiciendis. Enim ab incidunt inventore illo omnis tempora eius autem voluptate voluptates fugit?
+                    </div>
+                </div>
+                <div class="actor" style="display: inline-flex; justify-content: center; align-items: center; margin-top: 30px;">
+                    <div class= "actor_card" id="actor_card">
+                        <h3 id = "actor_name">ACTOR D:</h3>
+                        <img src="assets/images/bg.png" id="actor_picture"> 
+                    </div>
+                    <div class="actor_desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ipsa voluptas officiis unde enim nemo illum quidem reiciendis. Enim ab incidunt inventore illo omnis tempora eius autem voluptate voluptates fugit?
+                    </div>
+                </div>
+                <div class="actor" style="display: inline-flex; justify-content: center; align-items: center; margin-top: 30px;">
+                    <div class= "actor_card" id="actor_card">
+                        <h3 id = "actor_name">ACTOR D:</h3>
+                        <img src="assets/images/bg.png" id="actor_picture"> 
+                    </div>
+                    <div class="actor_desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ipsa voluptas officiis unde enim nemo illum quidem reiciendis. Enim ab incidunt inventore illo omnis tempora eius autem voluptate voluptates fugit?
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id = "category_user" class = "category_user">
+        <div class = "color"></div>
+        <div class = "color"></div>
+        <div class = "color"></div>
+        <div class="container" id="c_user">
+            <header>
+                <a href="#" class="logo" id="backHome5"><img src="assets/images/icon.png" class="img">Moviecats</a>
+                <ul>
+                    <li><a id="movie3" href="#movies">Películas</a></li>
+                    <li><a id="actor3" href="#actor">Actores</a></li>
+                    <li><a id="category3" href="#category">Categorías</a></li>
+                </ul>
+            </header>
+            <div class = "categories">
+                <div class="category" style="display: inline-flex; justify-content: center; align-items: center; margin-top: 30px;">
+                    <div class= "category_card" id="actor_card">
+                        <h3 id = "category_name">CATEGORÍA :D</h3>
+                    </div>
+                </div>
+                <div class="category" style="display: inline-flex; justify-content: center; align-items: center; margin-top: 30px;">
+                    <div class= "category_card" id="actor_card">
+                        <h3 id = "category_name">CATEGORÍA :D</h3>
+                    </div>
+                </div>
+                <div class="category" style="display: inline-flex; justify-content: center; align-items: center; margin-top: 30px;">
+                    <div class= "category_card" id="actor_card">
+                        <h3 id = "category_name">CATEGORÍA :D</h3>
+                    </div>
+                </div>
+                <div class="category" style="display: inline-flex; justify-content: center; align-items: center; margin-top: 30px;">
+                    <div class= "category_card" id="actor_card">
+                        <h3 id = "category_name">CATEGORÍA :D</h3>
+                    </div>
+                </div>
+                <div class="category" style="display: inline-flex; justify-content: center; align-items: center; margin-top: 30px;">
+                    <div class= "category_card" id="actor_card">
+                        <h3 id = "category_name">CATEGORÍA :D</h3>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+    <script type="module" src="assets/js/script.js"></script>
+
+</body>
+
+</html>
