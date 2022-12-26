@@ -23,7 +23,7 @@ export default class Lista{
         var temp = this.cabeza
         var found
         while(temp){
-            if(temp.valor.username == username && temp.valor.password == password ){
+            if(temp.valor.username == username && temp.valor.pass == password ){
               found = temp
               break
             }else{
@@ -61,7 +61,12 @@ export default class Lista{
         dot+= nodos+"\n \n"+conexiones+"\n\n"
         
         dot+= "{rank = same;" + rank + "}\n}\n}"
-        return dot
+        console.log(dot)
+        d3.select("#graphRender").graphviz()
+            .width(700)
+            .height(300)
+            .renderDot(dot)
+        
       }
 
 

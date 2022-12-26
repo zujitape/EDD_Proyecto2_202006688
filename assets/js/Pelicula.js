@@ -1,4 +1,4 @@
-import Lista from './ListaSimple.js';
+import ListaSimple from './ListaSimple.js';
 
 export default class Movie{
     constructor(id, nombre, precio, pages, categoria, punct){

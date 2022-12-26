@@ -1,0 +1,1 @@
+import { lstClientes, activeUser } from "./script";

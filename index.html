@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/images/icon_.png">
-    <link rel="shortcut icon" type="images/ico" href="assets/images/icon.png">
+    <link rel="shortcut icon" type="images/ico" href="assets/images/icon_.png">
     <title>MovieCats</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
@@ -45,8 +45,9 @@
                         <h2>Registrarse</h2>
                         <input class="input" type="text" id="txtUser" placeholder="Nombre de usuario">
                         <input class="input" type="text" id="txtNombre" placeholder="Nombre completo">
+                        <input class="input" type="text" id="txtCorreo" placeholder="Correo electrónico">
                         <input class="input" type="number" id="txtDpi" placeholder="DPI">
-                        <input class="input" type="number" id= "txtTel" placeholder="Teléfono">
+                        <input class="input" type="text" id= "txtTel" placeholder="Teléfono">
                         <input class="input" type="password" id="txtPass" placeholder="Contraseña">    
                         <button id="register" type="button">Registrarte</button>
                     </form>
@@ -66,22 +67,22 @@
                 <ul>
                     <li>
                         <label class="custom-file-upload">
-                            <input type="file" id="usersFile"/>Películas
+                            <input type="file" id="movieFile"/>Películas
                         </label>
                     </li>
                     <li>
                         <label class="custom-file-upload">
-                            <input type="file" id = 'artistFile'/>Clientes
+                            <input type="file" id = 'clientFile'/>Clientes
                         </label>
                     </li>
                     <li>
                         <label class="custom-file-upload">
-                            <input type="file" id = "musicFile"/>Actores
+                            <input type="file" id = "actorFile"/>Actores
                         </label>
                     </li>
                     <li>
                         <label class="custom-file-upload">
-                            <input type="file" id="programmedFile"/>Categorías
+                            <input type="file" id="catFile"/>Categorías
                         </label>
                     </li>
                 </ul>
@@ -89,11 +90,10 @@
             <div class="content">
                 <div class="graphs_btn">
                     <h2>Gráficas</h2>
-                    <button class="btn" id = "btn_userGraph">Películas</button>
-                    <button class="btn" id = "btn_artistGraph">Artistas</button>
-                    <button class="btn" id = "btn_songGraph">Canciones</button>
-                    <button class="btn" id = "btn_programmedGraph">Música<br>programada</button>
-                    <button class="btn" id = "btn_podcastGraph">Podcasts</button>
+                    <button class="btn" id = "btn_movieGraph">Películas</button>
+                    <button class="btn" id = "btn_clientGraph">Clientes</button>
+                    <button class="btn" id = "btn_actorGraph">Actores</button>
+                    <button class="btn" id = "btn_categoryGraph">Categorías</button>
                 </div>
                 <div class="graphs">
                     <div class="graphRender" id = "graphRender">                 
@@ -287,7 +287,7 @@
                 <button id="btn_preorden"><img src="assets/images/desc.png" style="width: 70px; height: 70px;"><br>Preorden</button>
                 <button id="btn_postorden"><img src="assets/images/asc.png" style="width: 70px; height: 70px;"><br>Postorden</button>
             </div>
-            <div class = "actors">
+            <div class = "actors" id = "actors">
                 <div class="actor" style="display: inline-flex; justify-content: center; align-items: center; margin-top: 30px;">
                     <div class= "actor_card" id="actor_card">
                         <h3 id = "actor_name">ACTOR D:</h3>
@@ -376,7 +376,11 @@
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>   
+    <script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>
     <script type="module" src="assets/js/script.js"></script>
+    <script type="module" src="assets/js/dataManager.js"></script>
 
 </body>
 

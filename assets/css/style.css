@@ -40,8 +40,9 @@ section .color:nth-child(3){
     top: 400px;
     left: 70%;
     width: 700px;
-    height: 700px;
+    height: 250px;
     background: #00d2ff;
+    object-fit: fill;
 }
 
 
@@ -52,8 +53,7 @@ section .color:nth-child(3){
     width: 100%;
     padding: 20px;
     margin: auto;
-    margin-top: 100px; 
-    display: none; 
+    margin-top: 100px;  
 }
 
 .admin{
@@ -96,6 +96,7 @@ section .color:nth-child(3){
     width: 100%;
     margin-top: 55px;
     margin-left: 95px;  
+    display: none;
 }
 
 ::-webkit-scrollbar{
@@ -458,6 +459,11 @@ input[type='file']::-webkit-upload-file-button:hover{
     place-items: center;
 }
 
+svg{
+    object-fit: fill;  
+    display: block;
+}
+
 .bc_content .merkle .graphRender2{
     border-radius: 20px;
     width: 100%;
@@ -534,7 +540,7 @@ svg{
 }
 
 .movie_user .container, .actor_user .container{
-    height: 980px;
+    height: 570px;
 }
 
 .category_user .container{
@@ -576,7 +582,7 @@ svg{
 }
 
 #movie_picture, #actor_picture{
-    margin-left: 5%;
+    margin-left: 8%;
     border-radius: 50%;
     width: 130px;
     height: 130px;
