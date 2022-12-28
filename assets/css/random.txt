@@ -1,5 +1,7 @@
 alert(document.querySelectorAll('input[type="checkbox"]:checked').length);
 
+document.querySelector('.myClassName').id
+
 <div class="bUsers" id="artist_section" style="display: inline-block;">
                     <div id="new_artist">
                         <div id="artist_card">

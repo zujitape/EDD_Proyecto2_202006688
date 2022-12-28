@@ -1,5 +1,5 @@
 import { lstClientes, activeUser } from "./script.js";
-import { abbActores } from "./dataManager.js";
+import { abbActores, avlName } from "./dataManager.js";
 
 document.getElementById("btn_salir").addEventListener("click", showIndex);
 document.getElementById("btn_salir1").addEventListener("click", showIndex);
@@ -20,11 +20,21 @@ document.getElementById("actor2").addEventListener("click", showActors);
 document.getElementById("actor3").addEventListener("click", showActors);
 document.getElementById("category").addEventListener("click", showPrincipal);
 
+
+//admin
 document.getElementById("btn_principal").addEventListener("click", showAdmin);
 document.getElementById("btn_blockchain").addEventListener("click", showBC);
+document.getElementById("btn_download").addEventListener("click", descargar);
+
+//actores
 document.getElementById("btn_inorden").addEventListener("click", showInorden);
 document.getElementById("btn_preorden").addEventListener("click", showPreorden);
 document.getElementById("btn_postorden").addEventListener("click", showPostorden);
+
+//películas
+document.getElementById("btn_asc").addEventListener("click", showAsc);
+document.getElementById("btn_desc").addEventListener("click", showDesc);
+
 
 var adminPage = document.querySelector(".admin")
 var indexPage = document.querySelector(".index")
@@ -73,6 +83,7 @@ export function showPrincipal(){
     moviePage.style.display = "none";
     actorPage.style.display = "none";
     categoryPage.style.display = "none";
+    showAsc()
 }
 
 export function showActors(){
@@ -102,6 +113,18 @@ export function showInorden(){
     document.getElementById("actors").innerHTML+= abbActores.showDivsInorden(abbActores.raiz)
 }
 
+export function showAsc(){
+    document.getElementById('movies').innerHTML = ''
+    document.getElementById("movies").innerHTML+= avlName.showDivsAsc(avlName.raiz)
+
+}
+
+export function showDesc(){
+    document.getElementById('movies').innerHTML = ''
+    document.getElementById("movies").innerHTML+= avlName.showDivsDesc(avlName.raiz)
+
+}
+
 export function showCategory(){
     adminPage.style.display = "none";
     indexPage.style.display = "none";
@@ -111,6 +134,14 @@ export function showCategory(){
     actorPage.style.display = "none";
     categoryPage.style.display = "block";
 }
+
+
+function descargar() {
+    html2canvas(document.querySelector("#graphRender")).then(canvas => {
+        document.body.appendChild(canvas)
+    });//y es el auxiliar y el nodo es z +1 porque se añade nuevo nodo
+}
+
 
 
 /* ------------------------ MOVIE INFORMATION */

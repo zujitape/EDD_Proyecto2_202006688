@@ -54,13 +54,14 @@ section .color:nth-child(3){
     padding: 20px;
     margin: auto;
     margin-top: 100px;  
+    display: none; 
 }
 
 .admin{
     width: 100%;
     margin-top: 55px;
     margin-left: 95px;
-    display: none; 
+    
  }
 
 .blockchain{
@@ -569,10 +570,11 @@ svg{
     width: 15%;
 }
 
-#movie_title, #actor_name{
+.movie_title, #actor_name{
     position: relative;
     width: 100%;
-    max-width: 100%;
+    max-width: 130px;
+    padding: 3px;
     background-color: black;
     color: white;
     text-align: center;
@@ -582,7 +584,6 @@ svg{
 }
 
 #movie_picture, #actor_picture{
-    margin-left: 8%;
     border-radius: 50%;
     width: 130px;
     height: 130px;
@@ -619,6 +620,12 @@ svg{
     margin-left: 30px;
 }
 
+#btn_inorden:hover, #btn_postorden:hover, #btn_preorden:hover, #btn_asc:hover, #btn_desc:hover{
+    background-color: white;
+    color: #3b4d50fa;
+    border-radius: 10px;
+
+}
 .container .movie_info{
     text-align: center;
     display: block;

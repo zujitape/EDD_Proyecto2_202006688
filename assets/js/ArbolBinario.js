@@ -75,39 +75,6 @@ export default class ABB{
         return dot
     }
 
-    postorden(){
-        this.postordenar(this.raiz)
-    }
-
-
-    postordenar(nodo){
-        if(nodo){
-            this.postorden(nodo.izquierda)
-            this.postorden(nodo.derecha)
-            console.log("Valor:",nodo.valor)
-        }
-    }
-
-    postordenar(nodo){
-        if(nodo){
-            this.postorden(nodo.izquierda)
-            this.postorden(nodo.derecha)
-            console.log("Valor:",nodo.valor)
-        }
-    }
-
-    //38, 43, 29, 86, 95, 74
-    inorden(){
-        this.inordenar(this.raiz)
-    }
-
-    inordenar(nodo){
-        if(nodo){
-            this.inordenar(nodo.izquierda)
-            console.log("valor", nodo.valor)
-            this.inordenar(nodo.derecha)
-        }
-    }
 
     newDiv(nodo){
         var html = ""
