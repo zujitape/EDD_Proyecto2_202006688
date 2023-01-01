@@ -1,5 +1,8 @@
+import ListaSimple from './ListaSimple.js';
+
 class Nodo{
     constructor(valor){
+        this.comments = new ListaSimple()
         this.valor = valor
         this.izquierda = null
         this.derecha = null
@@ -60,7 +63,7 @@ export default class AVL{
                 nodo.izquierda = this.agregarNombre(valor, nodo.izquierda)//inserción
                 if(this.height(nodo.derecha)-this.height(nodo.izquierda) == -2){//restar alturas de derecho e izquierdo
                     if (valor.nombre < nodo.izquierda.valor.nombre){//si es menor viene de la izquierda
-                        console.log(nodo)
+                        
                         nodo = this.rotarI(nodo)
                     }else{//si es mayor viene de la derecha
                         nodo = this.rotarDobleI(nodo)
@@ -158,9 +161,10 @@ export default class AVL{
             nodoD += "|<C1>"
         }
 
-        dot += "N" +nodo.valor.id + '[ label = "' + nodoI + nodo.valor.id + nodoD + '"];\n'
+        dot += "N" +nodo.valor.id + '[ label = "' + nodoI + nodo.valor.id + "\\n" + nodo.valor.nombre + nodoD + '"];\n'
+        
         if(nodo.izquierda){
-            dot+="N"+ nodo.valor.id + ":C0 ->N" + nodo.izquierda.valor.id + "\n"
+            dot += "N"+ nodo.valor.id + ":C0 ->N" + nodo.izquierda.valor.id+ "\n"
         }
 
         if(nodo.derecha){
@@ -170,11 +174,44 @@ export default class AVL{
         return dot
     }
 
-    buscar(id){
+    mostrarPelicula(id){
         var temp = this.raiz;
+        var html = ""
         while(temp){
             if(temp.valor.id == id){
-                return temp 
+                html += '<div class = "movie_info">'
+                html += '    <h2 class = "title" id="'+id+'">'+ temp.valor.nombre +'</h2>'
+                html += '    <h5>Puntuación</h5>'
+                for (var i = 0; i < Math.round(temp.valor.punct); i++){
+                    html += '    <label class = "fas fa-star" style = "color: #fd4"></label>'
+                }
+                html += '    <div class = "desc" style="display: inline-flex;">'
+                html += '        <img src="assets/images/icon.png" style="width: 90px; height: 90px; margin-right: 2%;">'
+                html += temp.valor.descripcion + '</div>'
+                html += '    <button id="btn_rent_individual" style="display: flex; justify-content: center; align-items: center; font-weight: 800;"><img src="assets/images/shop.png" id="movie_opt" style="margin-right: 10px; margin-top: 10px; height: 90px; width: 90px;"><br>Alquilar<br>'+ temp.valor.precio +'</button>' 
+                html += '</div> ' 
+                html += '<div class = "movie_rate">'
+                html += '    <h2>Califica esta película!</h2> '
+                html += '    <div class="star-widget">'
+                html += '        <input type="checkbox" name="rate" id="rate-5">'
+                html += '        <label for="rate-5" class="fas fa-star"></label>'
+                html += '        <input type="checkbox" name="rate" id="rate-4">'
+                html += '        <label for="rate-4" class="fas fa-star"></label>'
+                html += '        <input type="checkbox" name="rate" id="rate-3">'
+                html += '        <label for="rate-3" class="fas fa-star"></label>'
+                html += '        <input type="checkbox" name="rate" id="rate-2">'
+                html += '        <label for="rate-2" class="fas fa-star"></label>'
+                html += '        <input type="checkbox" name="rate" id="rate-1">'
+                html += '        <label for="rate-1" class="fas fa-star"></label>'
+                html += '    </div><button id = "send_q"><img id= "enviarimg" src="assets/images/send.png">Calificar</button>'
+                html += '</div>'
+                html += '<h2 style ="margin-top: 30px; font-weight: 600;">Comentarios</h2>'
+                html += '<div class = "comment_section">'
+                html += temp.comments.showComentarios()
+                html += '</div>'
+                html += '<input type="text" placeholder="Ingresa tu comentario" class ="comment_sth" id="comment"></div>'
+                html += '<button class = "btn" id ="send_comment">Publicar</button>'
+                return html 
             }else if(id < temp.valor.id){
                 temp = temp.izquierda
             }else{
@@ -183,18 +220,33 @@ export default class AVL{
         }
     }
 
+    existe(id){
+        var temp = this.raiz;
+        while(temp){
+            if(temp.valor.id == id){
+                return temp
+            }else if(id < temp.valor.id){
+                temp = temp.izquierda
+            }else{
+                temp = temp.derecha
+            }
+        }
+    }
+
+
+
     newDiv(nodo){
         var html = ""
         html += '<div class="movie">'
         html += '<div class= "movie_card" id="movie_card">'
-        html += '<h3 class = "movie_title" id= "' + nodo.valor.id + '">'+nodo.valor.nombre+'</h3>'
-        html += '<img src="assets/images/bg.png" id="movie_picture">' 
+        html += '<h3 class = "movie_title">'+nodo.valor.nombre+'</h3>'
+        html += '<img src="assets/images/movie2.png" id="movie_picture">' 
         html += '</div>'
         html += '<div class="movie_desc">' + nodo.valor.descripcion
         html += '</div>'
         html += '<div class="movie_opts">'
-        html += '<button id="btn_info" style="display: block;justify-content: center; align-items: center;"><img src="assets/images/info.png" id="movie_opt"><br>Información</button>'
-        html += '<button id="btn_rent" style="display: block; justify-content: center; align-items: center;"><img src="assets/images/shop.png" id="movie_opt"><br>Alquilar<br>Q'+ nodo.valor.precio +'</button>'      
+        html += '<button class="infobtns" style="display: block;justify-content: center; align-items: center;" id= "' + nodo.valor.id + '" ><img src="assets/images/info.png" class="movie_opt" id= "' + nodo.valor.id + '" ><br>Información</button>'
+        html += '<button class= "rentbtns" style="display: block; justify-content: center; align-items: center;" id= "' + nodo.valor.id + '"><img src="assets/images/shop.png" class="movie_opt" id= "' + nodo.valor.id + '" ><br>Alquilar<br>Q'+ nodo.valor.precio +'</button>'      
         html += '</div>'
         html += '</div>'
         return html 
@@ -210,7 +262,6 @@ export default class AVL{
         html += this.showDivsAsc(nodo.izquierda)
         html += this.newDiv(nodo)
         html += this.showDivsAsc(nodo.derecha)
-        console.log(html)
         return html
     }
 
@@ -222,7 +273,6 @@ export default class AVL{
         html = this.showDivsDesc(nodo.izquierda) + html
         html = this.newDiv(nodo) +html 
         html = this.showDivsDesc(nodo.derecha) +html 
-        console.log(html)
         return html
     }
 

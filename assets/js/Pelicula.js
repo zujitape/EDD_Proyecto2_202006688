@@ -1,5 +1,3 @@
-import ListaSimple from './ListaSimple.js';
-
 export default class Movie{
     constructor(id, nombre, desc, punct, precio, pages, categoria){
         this.id = id
@@ -9,7 +7,5 @@ export default class Movie{
         this.precio = precio
         this.pages = pages
         this.categoria = categoria
-        this.comments = new ListaSimple()
-        this.rentada = false
     }
 }

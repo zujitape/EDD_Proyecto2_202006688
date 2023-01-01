@@ -2,18 +2,22 @@ import {lstClientes, activeUser} from "./script.js";
 import Cliente from "./Cliente.js";
 import Actor from "./Actor.js";
 import Movie from "./Pelicula.js";
+import Categoria from "./Categoria.js";
 import ABB from "./ArbolBinario.js";
 import AVL from "./AVL.js";
+import Hash from "./Hash.js";
 
 document.getElementById('clientFile').addEventListener('change', onChange)
 document.getElementById('actorFile').addEventListener('change', onChange)
 document.getElementById('movieFile').addEventListener('change', onChange)
+document.getElementById('catFile').addEventListener('change', onChange)
 document.getElementById('btn_clientGraph').addEventListener("click", graphClients)
 document.getElementById('btn_actorGraph').addEventListener("click", graphActors)
 document.getElementById('btn_movieGraph').addEventListener("click", graphMovies)
+document.getElementById('btn_categoryGraph').addEventListener("click", graphCats)
 
 var abbActores = new ABB()
-
+var hashCats = new Hash(20)
 //gráficas
 var avlID = new AVL()
 
@@ -38,13 +42,12 @@ function onChange(event) {
             case 'movieFile':
                 reader.onload = getMovies;
                 alert('Archivo cargado correctamente')
+                console.log(avlID)
                 break
-            case 'programmedFile':
-                reader.onload = getProgrammed;
-                break
-            case 'podcastFile':
-                reader.onload = getPodcasts;
-                console.log(abbPodcast)
+            case 'catFile':
+                reader.onload = getCategories;
+                alert('Archivo cargado correctamente')
+                console.log(hashCats)
                 break
         }
         reader.readAsText(event.target.files[0]);
@@ -86,6 +89,15 @@ function getMovies(event){
     }
 }
 
+function getCategories(event){
+    var data = JSON.parse(event.target.result);
+    var size = Object.keys(data).length
+    for(var i = 0; i <size;i++){ 
+        var newCategory = new Categoria(data[i].id_categoria, data[i].company)
+        hashCats.agregar(newCategory)
+    }
+}
+
 function graphMovies(){
     avlID.graficar()
 }
@@ -99,4 +111,7 @@ function graphActors(){
     abbActores.graficar()
 }
 
-export {abbActores, avlID, avlName}
+function graphCats(){
+    hashCats.graficar()
+}
+export {abbActores, avlID, avlName, hashCats}

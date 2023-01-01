@@ -67,22 +67,22 @@
                 <ul>
                     <li>
                         <label class="custom-file-upload">
-                            <input type="file" id="movieFile"/>Películas
+                            <input type="file" id="movieFile"/>Cargar archivo<br>películas
                         </label>
                     </li>
                     <li>
                         <label class="custom-file-upload">
-                            <input type="file" id = 'clientFile'/>Clientes
+                            <input type="file" id = 'clientFile'/>Cargar archivo<br>clientes
                         </label>
                     </li>
                     <li>
                         <label class="custom-file-upload">
-                            <input type="file" id = "actorFile"/>Actores
+                            <input type="file" id = "actorFile"/>Cargar archivo<br>actores
                         </label>
                     </li>
                     <li>
                         <label class="custom-file-upload">
-                            <input type="file" id="catFile"/>Categorías
+                            <input type="file" id="catFile"/>Cargar archivo<br> categorías
                         </label>
                     </li>
                 </ul>
@@ -105,7 +105,7 @@
             </div>
             <div class="menubtn">
                 <button class="btn" id="btn_blockchain">Blockchain</button>
-                <button class="btn" id="btn_salir"><img src="assets/images/out.png" style="width: 20px; height:20px;"></button>
+                <button class="btn" id="btn_salir">Salir <img src="assets/images/out.png"></button>
             </div>
         </div>
     </section>
@@ -233,38 +233,38 @@
                     <li><a id="category1" href="#category">Categorías</a></li>
                 </ul>
             </header>
-            <div class = "movie_info">
-                <h2 class = "title">PELÍCULA OWO</h2>
-                <div class = "desc" style="display: inline-flex;">
-                    <img src="assets/images/icon.png" style="width: 110px; height: 110px; margin-right: 2%;">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ab rem libero quisquam molestias. Voluptatem natus excepturi ut error sint obcaecati non, reiciendis libero consequatur provident sapiente, quibusdam illum iusto?
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti quisquam vitae veniam totam distinctio voluptatum ullam beatae est animi magnam accusantium neque adipisci quos illum doloribus libero nulla, quibusdam ipsam?</div>
-                <button id="btn_rent_individual" style="display: flex; justify-content: center; align-items: center; font-weight: 800;"><img src="assets/images/shop.png" id="movie_opt" style="margin-right: 10px; margin-top: 10px;"><br>Alquilar<br>Q50.00</button>  
-            </div>
-            <div class = "movie_rate">
-                <h2>Califica esta película! </h2>
-                <div class="star-widget">
-                    <input type="radio" name="rate" id="rate-5">
-                    <label for="rate-5" class="fas fa-star"></label>
-                    <input type="radio" name="rate" id="rate-4">
-                    <label for="rate-4" class="fas fa-star"></label>
-                    <input type="radio" name="rate" id="rate-3">
-                    <label for="rate-3" class="fas fa-star"></label>
-                    <input type="radio" name="rate" id="rate-2">
-                    <label for="rate-2" class="fas fa-star"></label>
-                    <input type="radio" name="rate" id="rate-1">
-                    <label for="rate-1" class="fas fa-star"></label>
+            <div class="moviei" id="moviei">
+                <div class = "movie_info">
+                    <h2 class = "title">PELÍCULA OWO</h2>
+                    <h5>Puntuación</h5>
+                    <label class = "fas fa-star" style = "color: #fd4"></label>
+                    <div class = "desc" style="display: inline-flex;">
+                        <img src="assets/images/icon.png" style="width: 110px; height: 110px; margin-right: 2%;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ab rem libero quisquam molestias. Voluptatem natus excepturi ut error sint obcaecati non, reiciendis libero consequatur provident sapiente, quibusdam illum iusto?
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti quisquam vitae veniam totam distinctio voluptatum ullam beatae est animi magnam accusantium neque adipisci quos illum doloribus libero nulla, quibusdam ipsam?</div>
+                    <button id="btn_rent_individual" style="display: flex; justify-content: center; align-items: center; font-weight: 800;"><img src="assets/images/shop.png" id="movie_opt" style="margin-right: 10px; margin-top: 10px;"><br>Alquilar<br>Q50.00</button>  
+                </div>  
+                <div class = "movie_rate">
+                    <h2>Califica esta película! </h2>
+                    <div class="star-widget">
+                        <input type="checkbox" name="rate" id="rate-5">
+                        <label for="rate-5" class="fas fa-star"></label>
+                        <input type="checkbox" name="rate" id="rate-4">
+                        <label for="rate-4" class="fas fa-star"></label>
+                        <input type="checkbox" name="rate" id="rate-3">
+                        <label for="rate-3" class="fas fa-star"></label>
+                        <input type="checkbox" name="rate" id="rate-2">
+                        <label for="rate-2" class="fas fa-star"></label>
+                        <input type="checkbox" name="rate" id="rate-1">
+                        <label for="rate-1" class="fas fa-star"></label>
+                    </div>
                 </div>
-            </div>
-            <h2 style ="margin-top: 30px; font-weight: 600;">Comentarios</h2>
-            <div class = "comment_section">
-                <div class = "comment"><h4><font color=gray>Tu vieja:</font> asdjfñwfje</h4></div>
-                <div class = "comment"><h4><font color=gray>Tu vieja2:</font> ajsdf</h4></div>
-            </div>
-            <input type="text" placeholder="Ingresa tu comentario" class ="comment_sth"></div>
-            <button class = "btn" id ="send_comment">Publicar</button>
-            <div class = "movies">  
-                
+                <h2 style ="margin-top: 30px; font-weight: 600;">Comentarios</h2>
+                <div class = "comment_section">
+                    <div class = "comment"><h4><font color=blue>Tu vieja:</font> asdjfñwfje</h4></div>
+                    <div class = "comment"><h4><font color=blue>Tu vieja2:</font> ajsdf</h4></div>
+                </div>
+                <input type="text" placeholder="Ingresa tu comentario" class ="comment_sth"></div>
             </div>
         </div>
     </section>
@@ -283,9 +283,9 @@
                 </ul>
             </header>
             <div class = "sorting">
-                <button id="btn_inorden"><img src="assets/images/asc.png" style="width: 70px; height: 70px;"><br>Inorden</button>
-                <button id="btn_preorden"><img src="assets/images/desc.png" style="width: 70px; height: 70px;"><br>Preorden</button>
-                <button id="btn_postorden"><img src="assets/images/asc.png" style="width: 70px; height: 70px;"><br>Postorden</button>
+                <button id="btn_inorden"><img src="assets/images/inorden.png" style="width: 70px; height: 70px;"><br>Inorden</button>
+                <button id="btn_preorden"><img src="assets/images/preorden.png" style="width: 70px; height: 70px;"><br>Preorden</button>
+                <button id="btn_postorden"><img src="assets/images/postorden.png" style="width: 70px; height: 70px;"><br>Postorden</button>
             </div>
             <div class = "actors" id = "actors">
                 <div class="actor" style="display: inline-flex; justify-content: center; align-items: center; margin-top: 30px;">
@@ -342,34 +342,13 @@
                     <li><a id="category3" href="#category">Categorías</a></li>
                 </ul>
             </header>
-            <div class = "categories">
+            <div class = "categories" id="categories">
                 <div class="category" style="display: inline-flex; justify-content: center; align-items: center; margin-top: 30px;">
-                    <div class= "category_card" id="actor_card">
+                    <div class= "category_card" id="category_card" style="text-align: center;">
                         <h3 id = "category_name">CATEGORÍA :D</h3>
+                        <h5>By: compañía</h5>
                     </div>
                 </div>
-                <div class="category" style="display: inline-flex; justify-content: center; align-items: center; margin-top: 30px;">
-                    <div class= "category_card" id="actor_card">
-                        <h3 id = "category_name">CATEGORÍA :D</h3>
-                    </div>
-                </div>
-                <div class="category" style="display: inline-flex; justify-content: center; align-items: center; margin-top: 30px;">
-                    <div class= "category_card" id="actor_card">
-                        <h3 id = "category_name">CATEGORÍA :D</h3>
-                    </div>
-                </div>
-                <div class="category" style="display: inline-flex; justify-content: center; align-items: center; margin-top: 30px;">
-                    <div class= "category_card" id="actor_card">
-                        <h3 id = "category_name">CATEGORÍA :D</h3>
-                    </div>
-                </div>
-                <div class="category" style="display: inline-flex; justify-content: center; align-items: center; margin-top: 30px;">
-                    <div class= "category_card" id="actor_card">
-                        <h3 id = "category_name">CATEGORÍA :D</h3>
-                    </div>
-                </div>
-                
-                
                 
             </div>
         </div>
@@ -382,7 +361,9 @@
     <script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>   
     <script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>
     <script type="module" src="assets/js/script.js"></script>
-    <script type="module" src="assets/js/dataManager.js"></script>
+    <script type="module" src="assets/js/Pages.js"></script>
+    <script type="module" src="assets/js/admin.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/save-svg-as-png/1.4.17/saveSvgAsPng.js" integrity="sha512-eROF+rLuEUiVuYGmMqhsT8/OwSLcVw5RLjhhJrWLTznvDcwG0WtXrV6w7Ko4Nw7LyWzDZOGlQjfzQd7kUYLQcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </body>
 

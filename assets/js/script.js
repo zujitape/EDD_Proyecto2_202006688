@@ -5,7 +5,7 @@ import ListaSimple from './ListaSimple.js';
 var user = new Cliente(2340, "karla", "zuji", sha256("2"), 'karla@gmail.com', 234, true);
 var user2 = new Cliente(234, "yohann", "toby", sha256("2"), 'toby@gmail.com', 923483, false);
 var user3 = new Cliente(234, "loka", "china", sha256("2"),'china@gmail.com', 923483, false);
-var user4 = new Cliente(2354168452525, "Oscar Armin", "EDD", sha256(" 12345678"), 'admin@gmail.com',12345678, true);
+var user4 = new Cliente(2354168452525, "Oscar Armin", "EDD", sha256("12345678"), 'admin@gmail.com',12345678, true);
 
 var lstClientes = new ListaSimple();
 lstClientes.agregar(user)

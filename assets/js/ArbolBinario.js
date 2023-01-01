@@ -63,7 +63,7 @@ export default class ABB{
             nodoD += "|<C1>"
         }
 
-        dot += "N" +nodo.valor.dni + '[ label = "' + nodoI + nodo.valor.dni + nodoD + '"];\n'
+        dot += "N" +nodo.valor.dni + '[ label = "' + nodoI + nodo.valor.dni +"\\n" + nodo.valor.nombre+ nodoD + '"];\n'
         if(nodo.izquierda){
             dot+="N"+ nodo.valor.dni + ":C0 ->N" + nodo.izquierda.valor.dni + "\n"
         }
@@ -81,7 +81,7 @@ export default class ABB{
         html += '<div class="actor" style="display: inline-flex; justify-content: center; align-items: center; margin-top: 30px;">'
         html += '<div class= "actor_card" id="actor_card">'
         html += '<h3 id = "actor_name">'+ nodo.valor.nombre +'</h3>'
-        html += '<img src="assets/images/bg.png" id="actor_picture">'
+        html += '<img src="assets/images/actor.png" id="actor_picture">'
         html += '</div>'
         html += '<div class="actor_desc">' + nodo.valor.desc +'</div></div>'
         return html 

@@ -1,5 +1,5 @@
-import { lstClientes, activeUser } from "./script.js";
-import { abbActores, avlName } from "./dataManager.js";
+import { hashCats } from './admin.js'
+import * as active from './activeUser.js'
 
 document.getElementById("btn_salir").addEventListener("click", showIndex);
 document.getElementById("btn_salir1").addEventListener("click", showIndex);
@@ -18,22 +18,17 @@ document.getElementById("actor").addEventListener("click", showActors);
 document.getElementById("actor1").addEventListener("click", showActors);
 document.getElementById("actor2").addEventListener("click", showActors);
 document.getElementById("actor3").addEventListener("click", showActors);
-document.getElementById("category").addEventListener("click", showPrincipal);
+document.getElementById("category").addEventListener("click", showCategory);
+document.getElementById("category1").addEventListener("click", showCategory);
+document.getElementById("category2").addEventListener("click", showCategory);
+document.getElementById("category3").addEventListener("click", showCategory);
 
 
 //admin
 document.getElementById("btn_principal").addEventListener("click", showAdmin);
 document.getElementById("btn_blockchain").addEventListener("click", showBC);
-document.getElementById("btn_download").addEventListener("click", descargar);
+document.getElementById("btn_download").addEventListener("click", download);
 
-//actores
-document.getElementById("btn_inorden").addEventListener("click", showInorden);
-document.getElementById("btn_preorden").addEventListener("click", showPreorden);
-document.getElementById("btn_postorden").addEventListener("click", showPostorden);
-
-//películas
-document.getElementById("btn_asc").addEventListener("click", showAsc);
-document.getElementById("btn_desc").addEventListener("click", showDesc);
 
 
 var adminPage = document.querySelector(".admin")
@@ -52,7 +47,6 @@ export function showAdmin(){
     moviePage.style.display = "none";
     actorPage.style.display = "none";
     categoryPage.style.display = "none";
-    lstClientes.generarDot()
 }
 
 export function showIndex(){
@@ -83,7 +77,10 @@ export function showPrincipal(){
     moviePage.style.display = "none";
     actorPage.style.display = "none";
     categoryPage.style.display = "none";
-    showAsc()
+    active.showAsc()
+    active.addButtons()
+    active.addButtonsR()
+    
 }
 
 export function showActors(){
@@ -94,35 +91,8 @@ export function showActors(){
     moviePage.style.display = "none";
     actorPage.style.display = "block";
     categoryPage.style.display = "none";
-    showPostorden()
+    active.showInorden()
     
-}
-
-export function showPostorden(){
-    document.getElementById('actors').innerHTML = ''
-    document.getElementById("actors").innerHTML+= abbActores.showDivsPostorden(abbActores.raiz)
-}
-
-export function showPreorden(){
-    document.getElementById('actors').innerHTML = ''
-    document.getElementById("actors").innerHTML+= abbActores.showDivsPreorden(abbActores.raiz)
-}
-
-export function showInorden(){
-    document.getElementById('actors').innerHTML = ''
-    document.getElementById("actors").innerHTML+= abbActores.showDivsInorden(abbActores.raiz)
-}
-
-export function showAsc(){
-    document.getElementById('movies').innerHTML = ''
-    document.getElementById("movies").innerHTML+= avlName.showDivsAsc(avlName.raiz)
-
-}
-
-export function showDesc(){
-    document.getElementById('movies').innerHTML = ''
-    document.getElementById("movies").innerHTML+= avlName.showDivsDesc(avlName.raiz)
-
 }
 
 export function showCategory(){
@@ -133,13 +103,12 @@ export function showCategory(){
     moviePage.style.display = "none";
     actorPage.style.display = "none";
     categoryPage.style.display = "block";
+    active.showCats()
 }
 
 
-function descargar() {
-    html2canvas(document.querySelector("#graphRender")).then(canvas => {
-        document.body.appendChild(canvas)
-    });//y es el auxiliar y el nodo es z +1 porque se añade nuevo nodo
+function download(){
+	saveSvgAsPng(document.getElementsByTagName("svg")[0],"img.png")
 }
 
 
