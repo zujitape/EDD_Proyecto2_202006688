@@ -54,14 +54,14 @@ section .color:nth-child(3){
     padding: 20px;
     margin: auto;
     margin-top: 100px;  
-    display: none; 
+    
 }
 
 .admin{
     width: 100%;
     margin-top: 55px;
     margin-left: 95px;
-    
+    display: none; 
  }
 
 .blockchain{
