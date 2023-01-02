@@ -20,7 +20,6 @@ var abbActores = new ABB()
 var hashCats = new Hash(20)
 //gráficas
 var avlID = new AVL()
-
 //ordenamientos
 var avlName = new AVL()
 

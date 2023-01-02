@@ -2,8 +2,12 @@ import { activeUser } from "./script.js";
 import { avlID, avlName, abbActores, hashCats } from "./admin.js";
 import * as pages from './Pages.js';
 import Comentario from './Comentario.js'
+import Rentada from './Rentada.js'
+import Merkle from "./Merkle.js";
+import Blockchain from "./Blockchain.js"
 
-
+var merkle = new Merkle()
+var blockchn = new Blockchain()
 
 //actores
 document.getElementById("btn_inorden").addEventListener("click", showInorden);
@@ -19,6 +23,12 @@ var movie_info = document.getElementsByClassName("infobtns")
 var rent_movie = document.getElementsByClassName("rentbtns")
 var currentm_id = ""
 var current = ""
+var time = 300000
+
+var time_interval = setInterval(() =>{
+  blockchn.generarBloque();
+  console.log(blockchn)
+}, time )
 
 function star_rank(){
    currentm_id = document.getElementsByClassName("title")[0].id;
@@ -51,8 +61,14 @@ function rentMovie(){
   current = avlID.existe(currentm_id)
   alert("Película " + current.valor.id + " - " + current.valor.nombre + " rentada!")
   activeUser.rentadas.agregar(current.valor)
-  console.log(activeUser)
+  var movie_name = activeUser.valor.nombre
+  var user_name = current.valor.nombre
+  var price = current.valor.precio
+  var newCompra = new Rentada(movie_name, user_name, price)
+  merkle.agregar(newCompra)
+  console.log(merkle)
 }
+
 
 const viewMovie = e => {
     var i = e.target.id
@@ -79,6 +95,12 @@ const getMovie = e => {
   alert("Película " + current.valor.id + " - " + current.valor.nombre + " rentada!")
   activeUser.rentadas.agregar(current)
   console.log(activeUser)
+  var movie_name = activeUser.valor.nombre
+  var user_name = current.valor.nombre
+  var price = current.valor.precio
+  var newCompra = new Rentada(movie_name, user_name, price)
+  merkle.agregar(newCompra)
+  console.log(merkle)
 }
 
 export function addButtonsR(){
