@@ -4,10 +4,8 @@ import * as pages from './Pages.js';
 import Comentario from './Comentario.js'
 import Rentada from './Rentada.js'
 import Merkle from "./Merkle.js";
-import Blockchain from "./Blockchain.js"
 
 var merkle = new Merkle()
-var blockchn = new Blockchain()
 
 //actores
 document.getElementById("btn_inorden").addEventListener("click", showInorden);
@@ -25,10 +23,6 @@ var currentm_id = ""
 var current = ""
 var time = 300000
 
-var time_interval = setInterval(() =>{
-  blockchn.generarBloque();
-  console.log(blockchn)
-}, time )
 
 function star_rank(){
    currentm_id = document.getElementsByClassName("title")[0].id;
